@@ -1,0 +1,28 @@
+@font-face {
+    font-family: shrikhand;
+    src: url(Shrikhand/Shrikhand-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(Roboto/Roboto-Regular.ttf),
+         url(Roboto/Roboto-Bold.ttf);
+         
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url(Roboto/Roboto-Light.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: roboto, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
