@@ -4,8 +4,61 @@
 }
 
 .btn{
-    @include btn;
+    @include btn (17px);
+}
+
+.fonctionnement__etape{
+    display: flex;
+    box-shadow: 0px 4px 8px 1px lighten($color: black, $amount: 90);
+    padding: 28px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    background-color: lighten($color: black, $amount: 96);
+    transition: box-shadow 300ms ease-in-out;
+    &::after{
+        content: "";
+        background-color: $color-primary;
+        opacity: 0;
+        z-index: 1;
+        transition: opacity 200ms 100ms ease-in-out;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 20px;
+    }
+    &__number{
+        position: absolute;
+        color: white;
+        left: -11px;
+        padding: 3px 8px;
+        background-color: $color-primary;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+    & i{
+        color: grey;
+        font-size: 19px;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        transition: all 300ms ease-in-out;
+    }
+    &__description{
+        margin: auto;
+        font-size: 17px;
+        font-weight: bold;
+    }
     &:hover{
         cursor: pointer;
+        box-shadow: 0px 8px 8px 1px lighten($color: black, $amount: 90);
+        &::after{
+            opacity: 0.1;
+        }
+        & i{
+            color: $color-primary;
+        }
     }
 }
