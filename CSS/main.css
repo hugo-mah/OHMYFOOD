@@ -116,6 +116,60 @@ body {
   color: #9356DC;
 }
 
+.restaurant__card {
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: 0px 2px 8px 3px #cccccc;
+  margin-bottom: 20px;
+}
+.restaurant__card:nth-child(3) .restaurant__card__image {
+  align-items: center;
+}
+.restaurant__card__image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.restaurant__card__image img {
+  width: 100%;
+}
+.restaurant__card__image p {
+  position: absolute;
+  color: #38c4a1;
+  background-color: #99E2D0;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+.restaurant__card__body {
+  height: 80px;
+  position: relative;
+}
+.restaurant__card__body i {
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  font-size: 25px;
+}
+.restaurant__card__body__title {
+  margin-left: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.restaurant__card__body p {
+  margin-left: 20px;
+  margin-top: 3px;
+  font-size: 18px;
+  font-family: roboto-light;
+}
+
 header {
   box-shadow: 0px 2px 4px #cccccc;
   display: flex;
@@ -178,4 +232,50 @@ header {
   justify-content: center;
   width: 100%;
   margin-left: 5px;
+}
+
+.restaurant {
+  padding: 50px 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__title {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333333;
+  color: white;
+  padding: 15px 30px;
+}
+footer h1 {
+  margin-bottom: 15px;
+}
+footer h1 a {
+  text-decoration: none;
+  color: white;
+  font-family: shrikhand;
+  font-size: 18px;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+footer ul li {
+  margin-bottom: 8px;
+}
+footer ul li:nth-child(1) i {
+  padding-right: 15px;
+}
+footer ul li:nth-child(2) i {
+  padding-right: 9px;
+}
+footer ul li:nth-child(3) {
+  font-family: roboto-light;
+}
+footer ul li:nth-child(4) a {
+  text-decoration: none;
+  color: white;
+  font-family: roboto-light;
 }/*# sourceMappingURL=main.css.map */

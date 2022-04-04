@@ -61,3 +61,55 @@ header{
         margin-left: 5px;
     }
 }
+
+.restaurant{
+    padding: 50px 20px;
+    background-color: darken($color: white, $amount: 5);
+    display: flex;
+    flex-direction: column;
+    &__title{
+        margin-bottom: 20px;
+    }
+}
+
+footer{
+    background-color: lighten($color: black, $amount: 20);
+    color: white;
+    padding: 15px 30px;
+    & h1{
+        margin-bottom: 15px;
+        & a{
+            text-decoration: none;
+            color: white;
+            font-family: shrikhand;
+            font-size: 18px;
+        }
+    }
+    & ul{
+        list-style-type: none;
+        padding-left: 0px;
+        & li{
+            margin-bottom: 8px;
+            &:nth-child(1){
+                & i{
+                    padding-right: 15px;
+                }
+            }
+            &:nth-child(2){
+                & i{
+                    padding-right: 9px;
+                }
+            }
+            &:nth-child(3){
+                font-family: roboto-light;
+            }
+            &:nth-child(4){
+                & a{
+                    text-decoration: none;
+                    color: white;
+                    font-family: roboto-light;
+                }
+            }
+        }
+    }
+}
