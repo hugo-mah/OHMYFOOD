@@ -35,7 +35,7 @@ body {
   border: 0px solid white;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   padding: 20px 25px;
-  box-shadow: 0px 2px 8px 3px #cccccc;
+  box-shadow: 0px 4px 10px 2px #cccccc;
   cursor: pointer;
   transition: box-shadow 300ms ease-in-out;
   margin-bottom: 20px;
@@ -121,11 +121,25 @@ body {
   border-radius: 30px;
   overflow: hidden;
   height: 280px;
-  box-shadow: 0px 2px 8px 3px #cccccc;
+  box-shadow: 0px 4px 10px 2px #cccccc;
   margin-bottom: 20px;
+  transition: box-shadow 300ms ease-in-out;
 }
 .restaurant__card:nth-child(3) .restaurant__card__image {
   align-items: center;
+}
+.restaurant__card:hover {
+  box-shadow: 0px 7px 8px 3px #cccccc;
+  color: #9356DC;
+}
+.restaurant__card__link {
+  text-decoration: none;
+  color: black;
+  transition: color 300ms ease-in-out;
+}
+.restaurant__card__link:hover {
+  box-shadow: 0px 7px 8px 3px #cccccc;
+  color: #9356DC;
 }
 .restaurant__card__image {
   display: flex;
@@ -140,22 +154,47 @@ body {
 }
 .restaurant__card__image p {
   position: absolute;
-  color: #38c4a1;
+  color: #278870;
   background-color: #99E2D0;
   top: 15px;
   right: 15px;
   padding: 5px 10px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .restaurant__card__body {
   height: 80px;
   position: relative;
 }
-.restaurant__card__body i {
+.restaurant__card__body .heart {
   position: absolute;
   right: 30px;
   top: 13px;
   font-size: 25px;
+  opacity: 1;
+  z-index: 1;
+  height: 25px;
+}
+.restaurant__card__body .heart:hover {
+  display: none;
+  z-index: 0;
+}
+.restaurant__card__body .heart--full {
+  background: linear-gradient(to top right, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  position: absolute;
+  right: 29px;
+  top: 13px;
+  opacity: 0;
+  transition: opacity 300ms;
+  height: 28px;
+  width: 27px;
+}
+.restaurant__card__body .heart--full:hover {
+  opacity: 1;
+  z-index: 1;
 }
 .restaurant__card__body__title {
   margin-left: 20px;
@@ -168,6 +207,27 @@ body {
   margin-top: 3px;
   font-size: 18px;
   font-family: roboto-light;
+}
+
+.carte__plat {
+  box-shadow: 0px 4px 10px 2px #cccccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+.carte__plat__title {
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+.carte__plat__description {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-family: roboto-light;
+}
+.carte__plat__price {
+  margin-left: auto;
 }
 
 header {
@@ -278,4 +338,71 @@ footer ul li:nth-child(4) a {
   text-decoration: none;
   color: white;
   font-family: roboto-light;
+}
+
+figure {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+figure .img-back {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+.img-back {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+.carte {
+  border-radius: 40px;
+  margin-top: -40px;
+  background-color: white;
+  padding: 30px 20px;
+  position: relative;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carte__title {
+  font-family: shrikhand;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.carte__title i {
+  margin-left: auto;
+}
+.carte__menu {
+  margin-bottom: 40px;
+  width: 100%;
+}
+.carte__menu__title {
+  font-size: 16px;
+  font-family: roboto-light;
+  overflow: visible;
+  width: 40px;
+  padding-bottom: 3px;
+  border-bottom: 3px solid #99E2D0;
+  margin-bottom: 15px;
+}
+.carte__btn {
+  width: 60%;
+}
+
+header {
+  position: relative;
+}
+header a {
+  position: absolute;
+  left: 15px;
+  font-size: 20px;
+  color: black;
 }/*# sourceMappingURL=main.css.map */

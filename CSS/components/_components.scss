@@ -71,9 +71,23 @@
         height: 280px;
         @include box-shadow;
         margin-bottom: 20px;
+        transition: box-shadow 300ms ease-in-out;
         &:nth-child(3){
             & .restaurant__card__image{
                 align-items: center;
+            }
+        }
+        &:hover{
+            @include box-shadow-hover;
+            color: $color-primary;
+        }
+        &__link{
+            text-decoration: none;
+            color: black;
+            transition: color 300ms ease-in-out;
+            &:hover{
+                @include box-shadow-hover;
+                color: $color-primary;
             }
         }
         &__image{
@@ -88,22 +102,47 @@
             }
             & p{
                 position: absolute;
-                color: darken($color: $color-tertiary, $amount: 25);
+                color: darken($color: $color-tertiary, $amount: 40);
                 background-color: $color-tertiary;
                 top: 15px;
                 right: 15px;
                 padding: 5px 10px;
-                border-radius: 2px;
+                border-radius: 3px;
             }
         }
         &__body{
             height: 80px;
             position: relative;
-            & i{
+            & .heart{
                 position: absolute;
                 right: 30px;
                 top: 13px;
                 font-size: 25px;
+                opacity: 1;
+                z-index: 1;
+                height: 25px;
+                &:hover{
+                    display: none;
+                    z-index: 0;
+                }
+                &--full{
+                    background: linear-gradient(to top right, $color-secondary, $color-primary);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 25px;
+                    position: absolute;
+                    right: 29px;
+                    top: 13px;
+                    opacity: 0;
+                    transition: opacity 300ms;
+                    height: 28px;
+                    width: 27px;
+                    &:hover{
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                }
             }
             &__title{
                 margin-left: 20px;
@@ -118,6 +157,27 @@
                 font-family: roboto-light;
             }
         }
+    }
+}
+
+.carte__plat{
+    @include box-shadow;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 15px;
+    &__title{
+        font-size: 17px;
+        margin-bottom: 2px;
+    }
+    &__description{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        font-family: roboto-light;
+    }
+    &__price{
+        margin-left: auto;
     }
 }
 
