@@ -6,6 +6,37 @@ header{
     width: 100%;
 }
 
+.body{
+    &__menu{
+    animation: défilement 300ms;
+    }
+}
+
+.loading{
+    width: 100%;
+    position:fixed;
+    top: 0px;
+    height: 100%;
+    background-color: $color-tertiary;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loading-remove 2s forwards;
+    &__title{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 50px;
+        font-family: shrikhand;
+        background: linear-gradient(to top right, $color-secondary, $color-primary);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+        animation: loading 1s forwards alternate-reverse infinite ease-in-out;
+    }
+}
+
 .nav{
     display: flex;
     flex-direction: column;
@@ -134,7 +165,7 @@ figure{
 }
 
 .carte{
-    border-radius: 40px;
+    border-radius: 40px 40px 0px 0px;
     margin-top: -40px;
     background-color: white;
     padding: 30px 20px;
@@ -164,9 +195,44 @@ figure{
             padding-bottom: 3px;
             border-bottom: 3px solid $color-tertiary;
             margin-bottom: 15px;
+            animation: title 500ms ease-in-out both;
         }
     }
     &__btn{
         width: 60%;
+    }
+}
+
+
+
+
+
+
+.test{
+    @include box-shadow;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    &:hover{
+        & .test2{
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        & .test3{
+                transform: translateX(0%); 
+                width: 20%;
+        }
+    }
+    &2{
+        white-space: nowrap;
+    }
+    &3{
+        background-color: $color-tertiary;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: all 1s;
+        width: 0%;
     }
 }

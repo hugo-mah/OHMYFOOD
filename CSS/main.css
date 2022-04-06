@@ -1,3 +1,114 @@
+@charset "UTF-8";
+@-webkit-keyframes défilement {
+  from {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes défilement {
+  from {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes loading {
+  from {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes loading {
+  from {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@-webkit-keyframes loading-remove {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  80% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@keyframes loading-remove {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  80% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@-webkit-keyframes title {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes title {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes plat {
+  0% {
+    transform: translateY(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes plat {
+  0% {
+    transform: translateY(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 @font-face {
   font-family: shrikhand;
   src: url(Shrikhand/Shrikhand-Regular.ttf);
@@ -35,7 +146,7 @@ body {
   border: 0px solid white;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   padding: 20px 25px;
-  box-shadow: 0px 4px 10px 2px #cccccc;
+  box-shadow: 0px 4px 8px 2px #cccccc;
   cursor: pointer;
   transition: box-shadow 300ms ease-in-out;
   margin-bottom: 20px;
@@ -121,7 +232,7 @@ body {
   border-radius: 30px;
   overflow: hidden;
   height: 280px;
-  box-shadow: 0px 4px 10px 2px #cccccc;
+  box-shadow: 0px 4px 8px 2px #cccccc;
   margin-bottom: 20px;
   transition: box-shadow 300ms ease-in-out;
 }
@@ -188,7 +299,7 @@ body {
   right: 29px;
   top: 13px;
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 200ms;
   height: 28px;
   width: 27px;
 }
@@ -210,11 +321,31 @@ body {
 }
 
 .carte__plat {
-  box-shadow: 0px 4px 10px 2px #cccccc;
+  box-shadow: 0px 4px 8px 2px #cccccc;
   border-radius: 10px;
-  padding: 10px;
   background-color: white;
+  padding: 10px;
+  color: black;
   margin-bottom: 15px;
+  transition: all 300ms ease-in-out;
+  -webkit-animation: plat 400ms ease-in-out both;
+          animation: plat 400ms ease-in-out both;
+}
+.carte__plat--1 {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+.carte__plat--2 {
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
+}
+.carte__plat--3 {
+  -webkit-animation-delay: 850ms;
+          animation-delay: 850ms;
+}
+.carte__plat--4 {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
 }
 .carte__plat__title {
   font-size: 17px;
@@ -229,6 +360,23 @@ body {
 .carte__plat__price {
   margin-left: auto;
 }
+.carte__plat:hover {
+  box-shadow: 0px 7px 8px 3px #cccccc;
+  cursor: pointer;
+  color: #9356DC;
+}
+
+.check {
+  background-color: #99E2D0;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: all 1s;
+  width: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0%;
+}
 
 header {
   box-shadow: 0px 2px 4px #cccccc;
@@ -236,6 +384,37 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.body__menu {
+  -webkit-animation: défilement 300ms;
+          animation: défilement 300ms;
+}
+
+.loading {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  background-color: #99E2D0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: loading-remove 2s forwards;
+          animation: loading-remove 2s forwards;
+}
+.loading__title {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 50px;
+  font-family: shrikhand;
+  background: linear-gradient(to top right, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: loading 1s forwards alternate-reverse infinite ease-in-out;
 }
 
 .nav {
@@ -360,7 +539,7 @@ figure .img-back {
 }
 
 .carte {
-  border-radius: 40px;
+  border-radius: 40px 40px 0px 0px;
   margin-top: -40px;
   background-color: white;
   padding: 30px 20px;
@@ -392,9 +571,38 @@ figure .img-back {
   padding-bottom: 3px;
   border-bottom: 3px solid #99E2D0;
   margin-bottom: 15px;
+  -webkit-animation: title 500ms ease-in-out both;
+          animation: title 500ms ease-in-out both;
 }
 .carte__btn {
   width: 60%;
+}
+
+.test {
+  box-shadow: 0px 4px 8px 2px #cccccc;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.test:hover .test2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.test:hover .test3 {
+  transform: translateX(0%);
+  width: 20%;
+}
+.test2 {
+  white-space: nowrap;
+}
+.test3 {
+  background-color: #99E2D0;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: all 1s;
+  width: 0%;
 }
 
 header {

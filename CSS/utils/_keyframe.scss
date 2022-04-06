@@ -1,0 +1,66 @@
+@keyframes défilement{
+    from{
+        transform-origin: left;
+        transform:translateX(100%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes loading{
+    from{
+        transform: scale(0.6);
+        opacity: 0.3;
+    }
+
+    to{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes loading-remove {
+    0%{
+        opacity: 1;
+        z-index: 2;
+    }
+    
+    80%{
+        opacity: 1;
+        z-index: 2;
+    }
+
+    100%{
+        opacity: 0;
+        z-index: -2;
+    }
+}
+
+@keyframes title {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes plat {
+    0%{
+        transform: translateY(5px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
