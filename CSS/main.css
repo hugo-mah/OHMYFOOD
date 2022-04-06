@@ -109,6 +109,38 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes check {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes check {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
 @font-face {
   font-family: shrikhand;
   src: url(Shrikhand/Shrikhand-Regular.ttf);
@@ -321,11 +353,14 @@ body {
 }
 
 .carte__plat {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow: hidden;
   box-shadow: 0px 4px 8px 2px #cccccc;
   border-radius: 10px;
-  background-color: white;
-  padding: 10px;
   color: black;
+  background-color: white;
   margin-bottom: 15px;
   transition: all 300ms ease-in-out;
   -webkit-animation: plat 400ms ease-in-out both;
@@ -347,23 +382,59 @@ body {
   -webkit-animation-delay: 1050ms;
           animation-delay: 1050ms;
 }
+.carte__plat__div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  white-space: nowrap;
+  transition: width 300ms ease-in-out;
+  padding: 10px 0px 10px 10px;
+}
 .carte__plat__title {
   font-size: 17px;
   margin-bottom: 2px;
+  width: 100%;
 }
 .carte__plat__description {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
   font-family: roboto-light;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
 }
 .carte__plat__price {
-  margin-left: auto;
+  text-align: right;
+  width: 10%;
+}
+.carte__plat__check {
+  padding: 18px 10px;
+  color: white;
+  background-color: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3px;
+  transform: translateX(100%);
+  width: 0px;
+  transition: width 300ms ease-in-out;
 }
 .carte__plat:hover {
   box-shadow: 0px 7px 8px 3px #cccccc;
   cursor: pointer;
   color: #9356DC;
+}
+.carte__plat:hover .carte__plat__check {
+  -webkit-animation: check 300ms both;
+          animation: check 300ms both;
+  width: 15%;
+}
+.carte__plat:hover .carte__plat__check i {
+  -webkit-animation: spin 400ms both;
+          animation: spin 400ms both;
+}
+.carte__plat:hover .carte__plat__div {
+  width: 85%;
 }
 
 header {
@@ -539,10 +610,9 @@ figure .img-back {
 }
 .carte__title {
   font-family: shrikhand;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  width: 100%;
 }
 .carte__title i {
   margin-left: auto;

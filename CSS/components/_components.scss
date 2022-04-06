@@ -161,11 +161,14 @@
 }
 
 .carte__plat{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
     @include box-shadow;
     border-radius: 10px;
-    background-color: white;
-    padding: 10px;
     color: black;
+    background-color: white;
     margin-bottom: 15px;
     transition: all 300ms ease-in-out;
     animation: plat 400ms ease-in-out both;
@@ -174,23 +177,57 @@
             animation-delay: 250ms + 200ms * $i;
         }
     }
+    &__div{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        white-space: nowrap;
+        transition: width 300ms ease-in-out;
+        padding: 10px 0px 10px 10px;
+    }
     &__title{
         font-size: 17px;
         margin-bottom: 2px;
+        width: 100%;
     }
     &__description{
         width: 100%;
-        display: flex;
-        justify-content: flex-start;
         font-family: roboto-light;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 90%;
     }
     &__price{
-        margin-left: auto;
+        text-align: right;
+        width: 10%;
+    }
+    &__check{
+        padding: 18px 10px;
+        color: white;
+        background-color: $color-tertiary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+        transform: translateX(100%);
+        width: 0px;
+        transition: width 300ms ease-in-out;
     }
     &:hover{
         @include box-shadow-hover;
         cursor: pointer;
         color: $color-primary;
+        & .carte__plat__check{
+            animation: check 300ms both;
+            width: 15%;
+            & i{
+                animation: spin 400ms both;
+            }
+        }
+        & .carte__plat__div{
+            width: 85%;
+        }
     }
 }
 
