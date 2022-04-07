@@ -66,6 +66,8 @@
 .restaurant{
     &__card{
         width: 100%;
+        display: flex;
+        flex-direction: column;
         border-radius: $border-rad-btn;
         overflow: hidden;
         height: 280px;
@@ -78,15 +80,14 @@
             }
         }
         &:hover{
-            @include box-shadow-hover;
             color: $color-primary;
         }
         &__link{
             text-decoration: none;
             color: black;
+            height: 280px;
             transition: color 300ms ease-in-out;
             &:hover{
-                @include box-shadow-hover;
                 color: $color-primary;
             }
         }
@@ -111,7 +112,7 @@
             }
         }
         &__body{
-            height: 80px;
+            height: auto;
             position: relative;
             & .heart{
                 position: absolute;
@@ -218,7 +219,6 @@
         transition: all 300ms ease-in-out;
     }
     &:hover{
-        @include box-shadow-hover;
         cursor: pointer;
         color: $color-primary;
         & .carte__plat__check{
@@ -237,20 +237,5 @@
 
 
 .heart--full{
-    background: linear-gradient(to top right, $color-secondary, $color-primary);
-                    background-clip: border-box;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-size: 25px;
-                    position: absolute;
-                    right: 17px;
-                    top: 28px;
-                    opacity: 0;
-                    transition: opacity 200ms;
-                    height: 27px;
-                    width: 27px;
-                    &:hover{
-                        opacity: 1;
-                        z-index: 1;
-                    }
+    @include heart--full;
 }

@@ -261,6 +261,8 @@ body {
 
 .restaurant__card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 30px;
   overflow: hidden;
   height: 280px;
@@ -268,20 +270,22 @@ body {
   margin-bottom: 20px;
   transition: box-shadow 300ms ease-in-out;
 }
+.restaurant__card:hover {
+  box-shadow: 0px 7px 8px 3px #cccccc;
+}
 .restaurant__card:nth-child(3) .restaurant__card__image {
   align-items: center;
 }
 .restaurant__card:hover {
-  box-shadow: 0px 7px 8px 3px #cccccc;
   color: #9356DC;
 }
 .restaurant__card__link {
   text-decoration: none;
   color: black;
+  height: 280px;
   transition: color 300ms ease-in-out;
 }
 .restaurant__card__link:hover {
-  box-shadow: 0px 7px 8px 3px #cccccc;
   color: #9356DC;
 }
 .restaurant__card__image {
@@ -305,7 +309,7 @@ body {
   border-radius: 3px;
 }
 .restaurant__card__body {
-  height: 80px;
+  height: auto;
   position: relative;
 }
 .restaurant__card__body .heart {
@@ -366,6 +370,9 @@ body {
   -webkit-animation: plat 400ms ease-in-out both;
           animation: plat 400ms ease-in-out both;
 }
+.carte__plat:hover {
+  box-shadow: 0px 7px 8px 3px #cccccc;
+}
 .carte__plat--1 {
   -webkit-animation-delay: 450ms;
           animation-delay: 450ms;
@@ -423,7 +430,6 @@ body {
   transition: all 300ms ease-in-out;
 }
 .carte__plat:hover {
-  box-shadow: 0px 7px 8px 3px #cccccc;
   cursor: pointer;
   color: #9356DC;
 }
@@ -442,22 +448,13 @@ body {
 }
 
 .heart--full {
+  height: 27px;
+  width: 27px;
   background: linear-gradient(to top right, #FF79DA, #9356DC);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 25px;
-  position: absolute;
-  right: 17px;
-  top: 28px;
-  opacity: 0;
-  transition: opacity 200ms;
-  height: 27px;
-  width: 27px;
-}
-.heart--full:hover {
-  opacity: 1;
-  z-index: 1;
 }
 
 header {
@@ -469,8 +466,8 @@ header {
 }
 
 .body__menu {
-  -webkit-animation: défilement 300ms;
-          animation: défilement 300ms;
+  -webkit-animation: défilement 300ms ease-in-out;
+          animation: défilement 300ms ease-in-out;
 }
 
 .loading {
@@ -639,6 +636,17 @@ figure .img-back {
 }
 .carte__title i {
   margin-left: auto;
+}
+.carte__title .heart--full {
+  position: absolute;
+  right: 17px;
+  top: 28px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.carte__title .heart--full:hover {
+  opacity: 1;
+  z-index: 1;
 }
 .carte__menu {
   margin-bottom: 40px;

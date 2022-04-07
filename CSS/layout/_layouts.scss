@@ -8,31 +8,15 @@ header{
 
 .body{
     &__menu{
-    animation: défilement 300ms;
+    animation: défilement 300ms ease-in-out;
     }
 }
 
 .loading{
-    width: 100%;
-    position:fixed;
-    top: 0px;
-    height: 100%;
-    background-color: $color-tertiary;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include loading;
     animation: loading-remove 2s forwards;
     &__title{
-        width: 100%;
-        overflow: hidden;
-        text-align: center;
-        font-size: 50px;
-        font-family: shrikhand;
-        background: linear-gradient(to top right, $color-secondary, $color-primary);
-                    background-clip: border-box;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+        @include loading__title;
         animation: loading 1s forwards alternate-reverse infinite ease-in-out;
     }
 }
@@ -181,6 +165,17 @@ figure{
         width: 100%;
         & i{
             margin-left: auto;
+        }
+        & .heart--full{
+            position: absolute;
+        right: 17px;
+        top: 28px;
+        opacity: 0;
+        transition: opacity 200ms;
+        &:hover{
+            opacity: 1;
+            z-index: 1;
+    }
         }
     }
     &__menu{
