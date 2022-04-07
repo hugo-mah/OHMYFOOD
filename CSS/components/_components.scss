@@ -189,6 +189,9 @@
         font-size: 17px;
         margin-bottom: 2px;
         width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     &__description{
         width: 100%;
@@ -209,10 +212,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 3px;
+        margin-left: 0px;
         transform: translateX(100%);
         width: 0px;
-        transition: width 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
     }
     &:hover{
         @include box-shadow-hover;
@@ -221,6 +224,7 @@
         & .carte__plat__check{
             animation: check 300ms both;
             width: 15%;
+            margin-left: 10px;
             & i{
                 animation: spin 400ms both;
             }
@@ -231,3 +235,22 @@
     }
 }
 
+
+.heart--full{
+    background: linear-gradient(to top right, $color-secondary, $color-primary);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 25px;
+                    position: absolute;
+                    right: 17px;
+                    top: 28px;
+                    opacity: 0;
+                    transition: opacity 200ms;
+                    height: 27px;
+                    width: 27px;
+                    &:hover{
+                        opacity: 1;
+                        z-index: 1;
+                    }
+}
