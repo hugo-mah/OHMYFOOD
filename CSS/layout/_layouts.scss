@@ -18,6 +18,9 @@ header{
     &__title{
         @include loading__title;
         animation: loading 1s forwards alternate-reverse infinite ease-in-out;
+        @media (min-width:768px) {
+            font-size: 100px;
+        }
     }
 }
 
@@ -75,6 +78,21 @@ header{
         width: 100%;
         margin-left: 5px;
     }
+    @media (min-width : 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        &__title{
+            width: 100%;
+        }
+        &__card{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
 }
 
 .restaurant{
@@ -82,8 +100,16 @@ header{
     background-color: darken($color: white, $amount: 5);
     display: flex;
     flex-direction: column;
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
     &__title{
         margin-bottom: 20px;
+        @media (min-width :1024px) {
+            width: 100%;
+        }
     }
 }
 
@@ -146,6 +172,11 @@ figure{
     width: 100%;
     z-index: 0;
     position: relative;
+    @media (min-width: 1024px) {
+        height: 400px;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 
 .carte{
@@ -158,20 +189,36 @@ figure{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width:1024px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items:baseline;
+    }
     &__title{
         font-family: shrikhand;
         margin-bottom: 20px;
         display: flex;
         width: 100%;
+        @media (min-width:768px) {
+            font-size: 30px;
+        }
         & i{
             margin-left: auto;
         }
         & .heart--full{
             position: absolute;
-        right: 17px;
-        top: 28px;
-        opacity: 0;
-        transition: opacity 200ms;
+            right: 17px;
+            top: 28px;
+            opacity: 0;
+            transition: opacity 200ms;
+            @media (min-width : 768px) {
+                font-size: 30px;
+                right: 20px;
+                top: 28px;
+                width: 30px;
+                height: 30px;
+            }
         &:hover{
             opacity: 1;
             z-index: 1;
@@ -181,6 +228,9 @@ figure{
     &__menu{
         margin-bottom: 40px;
         width: 100%;
+        @media (min-width:1024px) {
+            width: 30%;
+        }
         &__title{
             font-size: 16px;
             font-family: roboto-light;
@@ -194,5 +244,11 @@ figure{
     }
     &__btn{
         width: 60%;
+        @media (min-width: 768px) {
+            width: 30%;
+        }
+        @media (min-width:1024px) {
+            margin: auto;
+        }
     }
 }

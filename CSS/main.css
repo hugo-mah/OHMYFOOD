@@ -258,6 +258,35 @@ body {
 .fonctionnement__etape:hover i {
   color: #9356DC;
 }
+@media (min-width: 768px) {
+  .fonctionnement__etape {
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fonctionnement__etape__number {
+    position: absolute;
+    top: -18px;
+    padding: 5px 11px;
+    border-radius: 30px;
+    left: auto;
+    font-size: 18px;
+  }
+  .fonctionnement__etape i {
+    position: absolute;
+    left: auto;
+    top: 25px;
+    font-size: 25px;
+  }
+  .fonctionnement__etape__description {
+    margin-top: 35px;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement__etape {
+    width: 30%;
+  }
+}
 
 .restaurant__card {
   width: 100%;
@@ -332,7 +361,7 @@ body {
   -webkit-text-fill-color: transparent;
   font-size: 25px;
   position: absolute;
-  right: 29px;
+  right: 28px;
   top: 13px;
   opacity: 0;
   transition: opacity 200ms;
@@ -354,6 +383,17 @@ body {
   margin-top: 3px;
   font-size: 18px;
   font-family: roboto-light;
+}
+@media (min-width: 768px) {
+  .restaurant__card__image {
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .restaurant__card {
+    width: 45%;
+    margin-bottom: 40px;
+  }
 }
 
 .carte__plat {
@@ -495,6 +535,11 @@ header {
   -webkit-text-fill-color: transparent;
   animation: loading 1s forwards alternate-reverse infinite ease-in-out;
 }
+@media (min-width: 768px) {
+  .loading__title {
+    font-size: 100px;
+  }
+}
 
 .nav {
   display: flex;
@@ -551,6 +596,25 @@ header {
   width: 100%;
   margin-left: 5px;
 }
+@media (min-width: 768px) {
+  .fonctionnement {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .fonctionnement__title {
+    width: 100%;
+  }
+  .fonctionnement__card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement {
+    flex-direction: row;
+  }
+}
 
 .restaurant {
   padding: 50px 20px;
@@ -558,8 +622,20 @@ header {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1024px) {
+  .restaurant {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
 .restaurant__title {
   margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .restaurant__title {
+    width: 100%;
+  }
 }
 
 footer {
@@ -616,6 +692,14 @@ figure .img-back {
   z-index: 0;
   position: relative;
 }
+@media (min-width: 1024px) {
+  .img-back {
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+  }
+}
 
 .carte {
   border-radius: 40px 40px 0px 0px;
@@ -628,11 +712,24 @@ figure .img-back {
   flex-direction: column;
   align-items: center;
 }
+@media (min-width: 1024px) {
+  .carte {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
 .carte__title {
   font-family: shrikhand;
   margin-bottom: 20px;
   display: flex;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .carte__title {
+    font-size: 30px;
+  }
 }
 .carte__title i {
   margin-left: auto;
@@ -644,6 +741,15 @@ figure .img-back {
   opacity: 0;
   transition: opacity 200ms;
 }
+@media (min-width: 768px) {
+  .carte__title .heart--full {
+    font-size: 30px;
+    right: 20px;
+    top: 28px;
+    width: 30px;
+    height: 30px;
+  }
+}
 .carte__title .heart--full:hover {
   opacity: 1;
   z-index: 1;
@@ -651,6 +757,11 @@ figure .img-back {
 .carte__menu {
   margin-bottom: 40px;
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .carte__menu {
+    width: 30%;
+  }
 }
 .carte__menu__title {
   font-size: 16px;
@@ -666,6 +777,16 @@ figure .img-back {
 .carte__btn {
   width: 60%;
 }
+@media (min-width: 768px) {
+  .carte__btn {
+    width: 30%;
+  }
+}
+@media (min-width: 1024px) {
+  .carte__btn {
+    margin: auto;
+  }
+}
 
 header {
   position: relative;
@@ -675,4 +796,10 @@ header a {
   left: 15px;
   font-size: 20px;
   color: black;
+}
+@media (min-width: 768px) {
+  header a {
+    font-size: 35px;
+    left: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */
