@@ -1,0 +1,20 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prefix": "postcss ./CSS/main.css --use autoprefixer -d ./CSS/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugo-mah/OHMYFOOD.git"
+  },
+  "author": "hugo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugo-mah/OHMYFOOD/issues"
+  },
+  "homepage": "https://github.com/hugo-mah/OHMYFOOD#readme",
+  "browserslist": "last 4 versions"
+}

@@ -114,7 +114,7 @@
     transform: translateX(100%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(2%);
   }
 }
 @keyframes check {
@@ -122,7 +122,7 @@
     transform: translateX(100%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(2%);
   }
 }
 @-webkit-keyframes spin {
@@ -263,6 +263,7 @@ body {
     margin-bottom: 20px;
     flex-direction: column;
     align-items: center;
+    width: 30%;
   }
   .fonctionnement__etape__number {
     position: absolute;
@@ -293,6 +294,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 30px;
+  background-color: white;
   overflow: hidden;
   height: 280px;
   box-shadow: 0px 4px 8px 2px #cccccc;
@@ -362,7 +364,7 @@ body {
   font-size: 25px;
   position: absolute;
   right: 28px;
-  top: 13px;
+  top: 14px;
   opacity: 0;
   transition: opacity 200ms;
   height: 28px;
@@ -408,26 +410,26 @@ body {
   margin-bottom: 15px;
   transition: all 300ms ease-in-out;
   -webkit-animation: plat 400ms ease-in-out both;
-          animation: plat 400ms ease-in-out both;
+  animation: plat 400ms ease-in-out both;
 }
 .carte__plat:hover {
   box-shadow: 0px 7px 8px 3px #cccccc;
 }
 .carte__plat--1 {
   -webkit-animation-delay: 450ms;
-          animation-delay: 450ms;
+  animation-delay: 450ms;
 }
 .carte__plat--2 {
   -webkit-animation-delay: 650ms;
-          animation-delay: 650ms;
+  animation-delay: 650ms;
 }
 .carte__plat--3 {
   -webkit-animation-delay: 850ms;
-          animation-delay: 850ms;
+  animation-delay: 850ms;
 }
 .carte__plat--4 {
   -webkit-animation-delay: 1050ms;
-          animation-delay: 1050ms;
+  animation-delay: 1050ms;
 }
 .carte__plat__div {
   display: flex;
@@ -475,13 +477,23 @@ body {
 }
 .carte__plat:hover .carte__plat__check {
   -webkit-animation: check 300ms both;
-          animation: check 300ms both;
-  width: 15%;
+  animation: check 300ms both;
+  width: 20%;
   margin-left: 10px;
+}
+@media (min-width: 768px) {
+  .carte__plat:hover .carte__plat__check {
+    width: 15%;
+  }
+}
+@media (min-width: 1024px) {
+  .carte__plat:hover .carte__plat__check {
+    width: 20%;
+  }
 }
 .carte__plat:hover .carte__plat__check i {
   -webkit-animation: spin 400ms both;
-          animation: spin 400ms both;
+  animation: spin 400ms both;
 }
 .carte__plat:hover .carte__plat__div {
   width: 85%;
@@ -743,11 +755,11 @@ figure .img-back {
 }
 @media (min-width: 768px) {
   .carte__title .heart--full {
-    font-size: 30px;
-    right: 20px;
+    font-size: 32px;
+    right: 19px;
     top: 28px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 }
 .carte__title .heart--full:hover {
@@ -760,7 +772,7 @@ figure .img-back {
 }
 @media (min-width: 1024px) {
   .carte__menu {
-    width: 30%;
+    width: 31%;
   }
 }
 .carte__menu__title {
@@ -785,6 +797,7 @@ figure .img-back {
 @media (min-width: 1024px) {
   .carte__btn {
     margin: auto;
+    font-size: 20px;
   }
 }
 
