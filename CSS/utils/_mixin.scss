@@ -56,17 +56,24 @@
         font-size: 50px;
         font-family: shrikhand;
         background: linear-gradient(to top right, $color-secondary, $color-primary);
-                    background-clip: border-box;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 @mixin heart--full {
     height: 27px;
     width: 27px;
     background: linear-gradient(to top right, $color-secondary, $color-primary);
-    background-clip: border-box;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 25px;
+    font-size: 27px;
+}
+
+@mixin nouveau {
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: darken($color: $color-tertiary, $amount: 40);
+    background-color: $color-tertiary;
 }

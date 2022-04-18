@@ -333,12 +333,12 @@ body {
 }
 .restaurant__card__image p {
   position: absolute;
-  color: #278870;
-  background-color: #99E2D0;
   top: 15px;
   right: 15px;
   padding: 5px 10px;
   border-radius: 3px;
+  color: #278870;
+  background-color: #99E2D0;
 }
 .restaurant__card__body {
   height: auto;
@@ -358,18 +358,20 @@ body {
   z-index: 0;
 }
 .restaurant__card__body .heart--full {
+  height: 27px;
+  width: 27px;
   background: linear-gradient(to top right, #FF79DA, #9356DC);
-  background-clip: border-box;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 27px;
   position: absolute;
-  right: 29px;
+  right: 28px;
   top: 12px;
   opacity: 0;
   transition: opacity 200ms;
   height: 28px;
-  width: 27px;
+  width: 28px;
   z-index: 0;
 }
 .restaurant__card__body .heart--full:hover {
@@ -502,15 +504,20 @@ body {
 .carte__plat:hover .carte__plat__div {
   width: 80%;
 }
+@media (min-width: 768px) {
+  .carte__plat:hover .carte__plat__div {
+    width: 85%;
+  }
+}
 
 .heart--full {
   height: 27px;
   width: 27px;
   background: linear-gradient(to top right, #FF79DA, #9356DC);
-  background-clip: border-box;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 25px;
+  font-size: 27px;
 }
 
 header {
@@ -546,7 +553,7 @@ header {
   font-size: 50px;
   font-family: shrikhand;
   background: linear-gradient(to top right, #FF79DA, #9356DC);
-  background-clip: border-box;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: loading 1s forwards alternate-reverse infinite ease-in-out;
@@ -752,8 +759,8 @@ figure .img-back {
 }
 .carte__title .heart--full {
   position: absolute;
-  right: 17px;
-  top: 28px;
+  right: 19px;
+  top: 26px;
   opacity: 0;
   transition: opacity 200ms;
 }

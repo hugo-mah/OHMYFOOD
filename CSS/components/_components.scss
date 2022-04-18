@@ -131,12 +131,9 @@
             }
             & p{
                 position: absolute;
-                color: darken($color: $color-tertiary, $amount: 40);
-                background-color: $color-tertiary;
                 top: 15px;
                 right: 15px;
-                padding: 5px 10px;
-                border-radius: 3px;
+                @include nouveau;
             }
         }
         &__body{
@@ -155,18 +152,14 @@
                     z-index: 0;
                 }
                 &--full{
-                    background: linear-gradient(to top right, $color-secondary, $color-primary);
-                    background-clip: border-box;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-size: 27px;
+                    @include heart--full;
                     position: absolute;
-                    right: 29px;
+                    right: 28px;
                     top: 12px;
                     opacity: 0;
                     transition: opacity 200ms;
                     height: 28px;
-                    width: 27px;
+                    width: 28px;
                     z-index: 0;
                     &:hover{
                         opacity: 1;
@@ -283,6 +276,9 @@
         }
         & .carte__plat__div{
             width: 80%;
+            @media (min-width:768px) {
+                width: 85%;
+            }
         }
     }
 }
